@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css?family=Bangers");
+.choice, .score {
+  box-shadow: 0.1rem 0.3rem 1.2rem #0009;
+}
+
+body {
+  height: 100vh;
+  text-align: center;
+  background: radial-gradient(#252525, #151515, #111);
+  font-family: "Bangers", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 2rem 0 6rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0 0 3rem 0;
+  opacity: 0;
+}
+h2.show {
+  opacity: 1;
+  transition: .5s ease-in;
+}
+
+.message {
+  font-size: 2rem;
+}
+
+.board {
+  display: flex;
+  align-items: unset;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 710px;
+  margin: 6rem 0 1.4rem 0;
+}
+
+.choice {
+  height: 7rem;
+  width: 7rem;
+  border: 0.5rem solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0.4rem 0.6rem;
+  cursor: pointer;
+  transition: background 4s ease, box-shadow 4s ease-in, transform 3s ease-out;
+  user-select: none;
+}
+.choice img {
+  width: 75%;
+}
+.choice:hover {
+  background: #121417;
+}
+
+.green-glow,
+.red-glow,
+.gray-glow {
+  transition: box-shadow 1s ease-out;
+}
+
+.green-glow {
+  box-shadow: 0 0 5.5rem #0f0;
+}
+
+.red-glow {
+  box-shadow: 0 0 5.5rem #f00;
+}
+
+.gray-glow {
+  box-shadow: 0 0 5.5rem #999;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  width: 14rem;
+  height: 3rem;
+  position: relative;
+  color: #fff;
+  transform: scale(1.8);
+}
+.scoreboard::after {
+  content: 'vs';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 150%;
+}
+
+.score {
+  width: 40%;
+  height: 100%;
+  font-size: 1rem;
+  position: relative;
+}
+.score.user {
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+  background-position: 50% 50% !important;
+}
+.score.james {
+  background-image: url(../img/james.jpg);
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+  background-position: 50% 35% !important;
+}
+
+.name {
+  position: absolute;
+  top: 102%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#my-score, #james-score {
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+#userwin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 28rem;
+  display: none;
+}
+
+#jameswin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84rem;
+  display: none;
+}
+
+.characters {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /*transform: translate(,);*/
+  height: 100%;
+  width: 100%;
+  background: #191919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.characters h3 {
+  font-size: 2.5rem;
+  width: 100%;
+  flex: 0 0 100%;
+  margin-bottom: -50px;
+}
+.characters .player {
+  border: 0px solid #fff;
+  overflow: show;
+  height: 10rem;
+  width: 10rem;
+  margin: 0.7rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+}
+.characters .player img {
+  border-radius: 50%;
+  height: 10rem;
+}
+.characters .caption {
+  margin-top: 0.4rem;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.characters.fade {
+  transition: .3s ease-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+@media (max-width: 700px) {
+  body {
+    height: auto;
+    overflow-y: scroll;
+  }
+
+  .board {
+    margin: 7rem 0 3rem 0;
+  }
+}
