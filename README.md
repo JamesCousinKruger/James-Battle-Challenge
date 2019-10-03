@@ -1,1 +1,1 @@
-# James-Battle-Challenge
+Jeu entièrement en HTML/CSS et JavaScript dans le cadre du "learning by teaching" proposé par la formation Référent Numérique en Entreprise dispensé par l'INSA de Rouen, le CESI et Simplon. Le but était de proposé une introduction à Javascript aux autres apprenants de la formation via ce jeu.
